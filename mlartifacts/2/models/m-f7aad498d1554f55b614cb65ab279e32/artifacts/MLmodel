@@ -1,0 +1,40 @@
+artifact_path: mlflow-artifacts:/2/models/m-f7aad498d1554f55b614cb65ab279e32/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.11.15
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.0
+    skops_trusted_types:
+    - lightgbm.sklearn.LGBMRegressor
+    - lightgbm.basic.Booster
+    - collections.OrderedDict
+is_signature_from_type_hint: false
+metadata:
+  best_rmse: 14.6861
+  description: LightGBM model trained with Optuna (50 trials)
+  feature_engineering: Target Encoding on PU_DO + One-Hot on hour_category
+  n_jobs: 2
+  number_of_trials: 50
+  preprocessing_artifacts: target_encoder.pkl, dict_vectorizer.pkl
+  training_period: AUG 2026
+mlflow_version: 3.14.0
+model_id: m-f7aad498d1554f55b614cb65ab279e32
+model_size_bytes: 333665
+model_uuid: m-f7aad498d1554f55b614cb65ab279e32
+prompts: null
+run_id: 67e2036b27dc4af5b0e7ecf113c148cf
+signature:
+  inputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1, 2046]}}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-08-02 13:38:09.097998'

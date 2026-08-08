@@ -1,0 +1,38 @@
+artifact_path: mlflow-artifacts:/2/models/m-4ff16ce0b01347f482f4434b029edd9b/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.11.15
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.0
+    skops_trusted_types:
+    - lightgbm.sklearn.LGBMRegressor
+    - lightgbm.basic.Booster
+    - collections.OrderedDict
+is_signature_from_type_hint: false
+metadata:
+  best_rmse: 14.6999
+  description: this run use without auto registery model
+  feature_engineering: PU_OP => target endcoding
+  number_of_trials: 50
+  training_period: AUG 2026
+mlflow_version: 3.14.0
+model_id: m-4ff16ce0b01347f482f4434b029edd9b
+model_size_bytes: 740169
+model_uuid: m-4ff16ce0b01347f482f4434b029edd9b
+prompts: null
+run_id: 05ffa61dc3d4449bb91c344609e77a23
+signature:
+  inputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1, 2046]}}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-08-02 13:38:22.356580'
